@@ -1,0 +1,43 @@
+{
+    "author": "Lorenzo Garc\u00eda Rivera <lorenzogrv@gmail.com> (http://www.lorenzogrv.com)",
+    "bundledDependencies": [
+        ".bin",
+        "jade",
+        "express",
+        "colors",
+        "less",
+        "less-middleware"
+    ],
+    "dependencies": {
+        "colors": "0.6.x",
+        "express": "3.2.0",
+        "jade": "0.29.x",
+        "less": "1.3.3",
+        "less-middleware": "0.1.11"
+    },
+    "description": "Web application for my personal cloud",
+    "devDependencies": {
+        "mocha": "1.9.0",
+        "zombie": "1.4.x"
+    },
+    "domains": [
+        "lorenzogrv.com",
+        "www.lorenzogrv.com",
+        "media.lorenzogrv.com"
+    ],
+    "engines": {
+        "node": "0.8.x"
+    },
+    "env": {
+        "npm_config_production": true,
+        "npm_config_rebuild_bundle": false
+    },
+    "main": "server.js",
+    "name": "lorenzogrv.com",
+    "scripts": {
+        "start": "node server.js",
+        "test": "make test"
+    },
+    "subdomain": "lorenzogrv",
+    "version": "0.0.3-2"
+}

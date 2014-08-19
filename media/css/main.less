@@ -1,0 +1,39 @@
+/* ** THIRD-PARTY STUFF ** */
+@import "vendor/normalize.less";
+@import "vendor/h5bp-4.0.1-helpers.less";
+
+/* ** MAIN STYLES ** */
+
+@import "mixins.less";
+@import "variables.less";
+@import "styles.less";
+
+/* ** MEDIA QUERIES  ** */
+
+@media only screen and (min-width: 35em) {
+    // Style adjustments for viewports that meet the condition
+    body {
+      padding-top: 3em;
+      .touch & { padding-top: .5em; }
+
+//      > * { .wrapper(flexible, @layout-width); }
+    
+      h1 {
+        font-size: 4.2em;
+        .touch & { letter-spacing: -30px; }
+      }
+      h2 { font-size: 1.8em; }
+      cite { max-width: 23em; }
+
+      nav a:active { background-color: green; }
+    }
+}
+/*
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 144dpi) {
+    // Style adjustments for high resolution devices
+}
+*/
+
+// Print styles
+// @media print { @import "h5bp-4-0.1-print.css"; }

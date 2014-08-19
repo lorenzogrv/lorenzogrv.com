@@ -1,0 +1,112 @@
+
+html, button, input, select, textarea { color: @text-color; }
+body {
+ }
+
+::-moz-selection { background: @selection-bg; text-shadow: none; }
+::selection { background: @selection-bg; text-shadow: none; }
+
+hr { display: block; margin: 1em 0; padding: 0; border: 0; 
+     border-top: 1px solid #ccc; height: 1px; }
+
+img { vertical-align: middle; }
+fieldset { border: 0; margin: 0; padding: 0; }
+textarea { resize: vertical; }
+
+
+/* LAYOUT */
+
+html {
+  background-image: -moz-linear-gradient(top, @bg-gradient-top, @bg-gradient-bot);
+  background-image: -webkit-gradient(linear, left top, left bottom,
+                      color-stop(0%, @bg-gradient-top),
+                      color-stop(100%, @bg-gradient-bot)
+                    );
+  background-image: -webkit-linear-gradient(top, @bg-gradient-top, @bg-gradient-bot);
+  background-image: -ms-linear-gradient(top, @bg-gradient-top, @bg-gradient-bot);
+  background-image: -o-linear-gradient(top, @bg-gradient-top, @bg-gradient-bot);
+  background-image: linear-gradient(to bottom, @bg-gradient-top, @bg-gradient-bot);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@bg-gradient-top, endColorstr=@bg-gradient-bot,GradientType=0 );
+  background-repeat: no-repeat;
+  height: 100%;
+//  background-attachment: fixed;
+  background-color: @bg-gradient-bot;
+}
+
+body {
+  font-size: 1em;
+  font-family: 'Ubuntu';
+  line-height: 1.4;
+  
+
+  > * {
+    .wrapper(flexible);
+    margin: 0 auto;
+
+    text-align: center;
+  }
+
+  h1, h2 {
+    font-family: 'Ubuntu Mono';
+    text-shadow: inset 1px 1px 2px #fff;
+  }
+  h1 {
+    font-size: 2.5em; color: @h1-fg;
+    .touch & { letter-spacing: -18px; }
+  }
+  h2 {
+    font-size: 1.4em; color: @h2-fg;
+    .touch & { letter-spacing: -10px; }
+  }
+
+  nav {
+    overflow: visible;
+    margin: 1em auto; 
+    a {
+      display: inline-block;
+      margin: .6em;
+      padding: 2em 1em;
+      height: 3em;
+      width: 5em;
+      border-radius: 4em;
+      color: white;
+      text-decoration: none;
+      background-color: #222;
+      @c1: fade(#fff, 85%);
+      @c2: fade(#fff, 0%);
+      background-image: -webkit-gradient(radial, 18% 18%, 0, 18% 18%, 130,
+                          color-stop(0%, @c1),
+                          color-stop(100%, @c2)
+                        );
+      background-image: -webkit-radial-gradient(1.3em 1.3em, circle, @c1, @c2);
+      background-image: -moz-radial-gradient(1.3em 1.3em, circle, @c1, @c2);
+      background-image: -ms-radial-gradient(1.3em 1.3em, circle, @c1, @c2);
+      background-image: -o-radial-gradient(1.3em 1.3em, circle, @c1, @c2);
+      background-image: radial-gradient(at 1.3em 1.3em, @c1, @c2);
+      @shadow: inset 0 0 6px #000, 1px 1px 3px #000;
+      .box-shadow(@shadow);
+      .transition(all .3s ease);
+    }
+    a:hover, a:active {
+      color: darken(@menu-button, 30%);
+      background-color: @menu-button;
+      @shadow: inset 0 0 6px darken(@menu-button, 40%), 1px 1px 3px #000;
+      .box-shadow(@shadow);
+    }
+  }
+
+  cite {
+    position: relative;
+    z-index: -1;
+    padding: 1.2em 1.8em;
+    text-align: center;
+
+    &:before { content: '“'; top: 0; left: 0; text-align: left; }
+    &:after { content: '”'; bottom: -.2em; right: 0; }
+    &:before, &:after {
+      position: absolute;
+      width: .8em;
+      font-size: 3em;
+    }
+  }
+}
